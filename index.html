@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Percentage Calculator</title>
+</head>
+<body>
+
+<h2>Enter Marks for 4 Subjects</h2>
+
+<div>
+  <label for="subject1">Subject 1:</label>
+  <input type="number" id="subject1" min="0" max="100">
+</div>
+
+<div>
+  <label for="subject2">Subject 2:</label>
+  <input type="number" id="subject2" min="0" max="100">
+</div>
+
+<div>
+  <label for="subject3">Subject 3:</label>
+  <input type="number" id="subject3" min="0" max="100">
+</div>
+
+<div>
+  <label for="subject4">Subject 4:</label>
+  <input type="number" id="subject4" min="0" max="100">
+</div>
+
+<button onclick="calculatePercentage()">Calculate Percentage</button>
+
+<p id="result"></p>
+
+<script>
+  function calculatePercentage() {
+    // Getting input values
+    var subject1 = parseFloat(document.getElementById('subject1').value);
+    var subject2 = parseFloat(document.getElementById('subject2').value);
+    var subject3 = parseFloat(document.getElementById('subject3').value);
+    var subject4 = parseFloat(document.getElementById('subject4').value);
+
+    // Calculating total marks
+    var totalMarks = subject1 + subject2 + subject3 + subject4;
+
+    // Calculating percentage
+    var percentage = (totalMarks / 400) * 100;
+
+    // Displaying result
+    document.getElementById('result').innerHTML = "Percentage: " + percentage.toFixed(2) + "%";
+  }
+</script>
+
+</body>
+</html>
